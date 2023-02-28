@@ -41,6 +41,7 @@ function highlightDegreeIcon() {
 }
 
 function showTempInCelcius(event) {
+  event.preventDefault();
   let fahreinheitTemp = document.querySelector("#degreeTemperature");
   let tempInCelcius = Math.round((fahreinheitTemp.innerHTML - 32) * 0.5556);
   let fahrenheitIcon = document.querySelector(".degree-in-fahrenheit");
@@ -50,6 +51,7 @@ function showTempInCelcius(event) {
 }
 
 function showTempInFahrenheit(event) {
+  event.preventDefault();
   let celciusTemp = document.querySelector("#degreeTemperature");
   let tempInFahrenheit = Math.round(celciusTemp.innerHTML * 1.8 + 32);
   let celciusIcon = document.querySelector(".degree-in-celcius");
@@ -68,16 +70,15 @@ function getWeatherInfo(city) {
 function search(event) {
   event.preventDefault();
   let inputCity = document.querySelector("#input-city");
-  let searchInput = document.querySelector("#search-text-input");
-  let inputValue = searchInput.value;
-  if (inputValue) {
-    inputCity.innerHTML = `${searchInput.value}`;
+  let searchInput = document.querySelector("#search-text-input").value;
+  if (searchInput) {
+    inputCity.innerHTML = `${searchInput}`;
     getCurrentDate();
   }
 
   highlightDegreeIcon();
 
-  getWeatherInfo(inputValue);
+  getWeatherInfo(searchInput);
 }
 
 function showTopCityWeatherInfo(event) {
@@ -105,8 +106,7 @@ function displayCurrentLocationWeather() {
   navigator.geolocation.getCurrentPosition(showPosition);
 }
 
-let defaultCityWeather = document.querySelector("#input-city").innerHTML;
-getWeatherInfo(defaultCityWeather);
+getWeatherInfo("New York");
 getCurrentDate();
 
 let searchButton = document.querySelector("#search-form");
