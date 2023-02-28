@@ -1,0 +1,108 @@
+body {
+  background: #e7eaf6;
+}
+
+h1 {
+  font-size: 16px;
+  text-transform: capitalize;
+}
+
+.container {
+  max-width: 800px;
+  font-family: "Roboto", sans-serif;
+  margin: 50px auto;
+  text-align: center;
+  background: linear-gradient(
+    180.3deg,
+    rgb(221, 221, 221) 5.5%,
+    rgb(110, 136, 161) 90.2%
+  );
+  padding: 30px 50px;
+  border-radius: 10px;
+  box-shadow: 10px 10px 20px rgba(158, 162, 162, 0.2);
+}
+
+.current-location {
+  background: rgb(110, 136, 161);
+  color: rgb(237, 232, 232);
+}
+
+.dark {
+  font-weight: bold;
+}
+
+.degree-in-fahrenheit {
+  transition: all 200ms ease-in-out;
+}
+
+.degree-in-fahrenheit:hover {
+  cursor: pointer;
+}
+
+.degree-in-celcius {
+  transition: all 200ms ease-in-out;
+}
+
+.degree-in-celcius:hover {
+  cursor: pointer;
+}
+
+.day {
+  font-weight: 500;
+}
+
+#future-weather-info {
+  font-weight: 100;
+}
+
+#future-weather-info .col {
+  width: auto;
+  font-weight: 300;
+  border: 1px solid rgb(110, 136, 161);
+  padding: 10px 5px;
+  border-top: 0;
+  border-bottom: 0;
+  transition: all 200ms ease-in-out;
+}
+#future-weather-info .col:hover {
+  background: rgb(221, 221, 221);
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#today {
+  background: rgb(221, 221, 221);
+  border-radius: 8px;
+}
+#current-weather-info {
+  position: relative;
+  top: 24px;
+  left: -126px;
+  margin-bottom: 50px;
+}
+
+#current-weather-info #current-day-precipitation {
+  position: relative;
+  left: 244px;
+}
+
+#top-row {
+  padding-bottom: 20px;
+}
+
+#top-row .cities,
+.current-location {
+  width: auto;
+  border: 2px solid rgb(110, 136, 161);
+  padding: 2px 10px;
+  margin-right: 5px;
+  border-radius: 17px;
+  transition: all 200ms ease-in-out;
+}
+
+#top-row .cities:hover,
+.current-location:hover {
+  background-color: rgb(110, 136, 161);
+  cursor: pointer;
+  color: white;
+}
